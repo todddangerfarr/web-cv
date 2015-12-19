@@ -5,11 +5,12 @@
 */
 
 /***************************
-IMPORT
+IMPORTS
 ****************************/
 
 @import url('bootstrap.min.css');
 @import url('font-awesome.min.css');
+@import url('portfolio.jquery.css');
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
 
 
@@ -202,6 +203,7 @@ body{
 #sidebar {
 	border-top: 10px solid #1abc9c;
 	margin-bottom: 30px;
+  position: fixed;
 }
 
 #sidebar .social-media {
