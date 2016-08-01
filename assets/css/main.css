@@ -477,7 +477,7 @@ body{
 
 .timeline > li > .timeline-panel .hr-left{
 	height: 1px;
-	width: 100px;
+	width: 100%;
 	margin-bottom: 20px;
 	background-color: #ddd;
 }
@@ -589,6 +589,25 @@ body{
 }
 
 
+/**************************
+	SUMMARY
+***************************/
+
+.bullet-point {
+	margin-bottom: 5px;
+}
+
+.info-btn {
+	margin-right: 0px;
+}
+
+.title-btn {
+	min-width: 110px;
+}
+
+.text-btn {
+	min-width: 180px;
+}
 
 /**************************
 	WORK

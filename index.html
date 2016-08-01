@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' ng-app="webCv">
   <head>
     <meta charset='utf-8'>
     <title>Todd Farr - CV</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <script type="text/javascript" src="assets/js/angular.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
   </head>
 
-  <body id="page-top">
+  <body id="page-top" ng-controller="InformationController as cv">
     <div class="container" id="main">
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -26,10 +28,10 @@
   					</div>
   					<div class="name">
   						<div class="text-center">
-  							<img src="img/America_Todd.jpg" class="img-circle">
+  							<img src="assets/img/America_Todd.jpg" class="img-circle">
   						</div>
   						<div class="name-head">
-  							<h1>TODD FARR</h1>
+  							<h1>{{ cv.info.name | uppercase }}</h1>
   							<div class="hr-center"></div>
   							<h5>Machine Design <br>Engineer</h5>
   						</div>
@@ -84,16 +86,12 @@
   					        <li id="profile">
   					          	<div class="timeline-badge primary"></div>
   					          	<div class="timeline-panel">
-  					          		<h1>Hello, I am <strong>TODD FARR</strong></h1>
-  					          		<h4>Machine Design Engineer + Software Developer</h4>
+  					          		<h1>Hello, I am <strong>{{ cv.info.name | uppercase }}</strong></h1>
+  					          		<h4>{{ cv.info.titleLong }}</h4>
   					          		<div class="hr-left"></div>
-
-  					          		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  					          		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  					          		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  					          		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  					          		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  					          		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                          <ul>
+                            <li class="bullet-point" ng-repeat="bullet in cv.info.summary">{{ bullet }}</li>
+                          </ul>
   					          	</div>
   					        </li>
   					        <li id="personal-info">
@@ -102,29 +100,29 @@
   					          		<h1>Personal Info</h1>
   					          		<div class="hr-left"></div>
 
-  					          		<div class="btn-group">
-  									  	<button type="button" disabled="" class="btn btn-primary">Name</button>
-  									  	<button type="button" disabled="" class="btn btn-default">Todd Farr</button>
+  					        <div class="btn-group info-btn">
+  									  <button type="button" disabled="" class="btn btn-primary title-btn">Name</button>
+  									  <button type="button" disabled="" class="btn btn-default text-btn">{{ cv.info.name }}</button>
   									</div>
-  									<div class="btn-group">
-  									  	<button type="button" disabled="" class="btn btn-primary">date of birth</button>
-  									  	<button type="button" disabled="" class="btn btn-default">April 29th, 1986</button>
+  									<div class="btn-group info-btn">
+  									  <button type="button" disabled="" class="btn btn-primary title-btn">Date of Birth</button>
+  									  <button type="button" disabled="" class="btn btn-default text-btn">{{ cv.info.dob }}</button>
   									</div>
-  									<div class="btn-group">
-  									  	<button type="button" disabled="" class="btn btn-primary">email</button>
-  									  	<button type="button" disabled="" class="btn btn-default">todd.farr@gmail.com</button>
+  									<div class="btn-group info-btn">
+  									  <button type="button" disabled="" class="btn btn-primary title-btn">email</button>
+  									  <button type="button" disabled="" class="btn btn-default text-btn">{{ cv.info.email }}</button>
   									</div>
-  									<div class="btn-group">
-  									  	<button type="button" disabled="" class="btn btn-primary">Address</button>
-  									  	<button type="button" disabled="" class="btn btn-default">P.O. Box 4017</button>
+  									<div class="btn-group info-btn">
+  									  <button type="button" disabled="" class="btn btn-primary title-btn">Address</button>
+  									  <button type="button" disabled="" class="btn btn-default text-btn">{{ cv.info.address }}</button>
   									</div>
-  									<div class="btn-group">
-  									  	<button type="button" disabled="" class="btn btn-primary">Phone</button>
-  									  	<button type="button" disabled="" class="btn btn-default">503-821-7770</button>
+  									<div class="btn-group info-btn">
+  									  <button type="button" disabled="" class="btn btn-primary title-btn">Phone</button>
+  									  <button type="button" disabled="" class="btn btn-default text-btn">503-821-7770</button>
   									</div>
-  									<div class="btn-group">
-  									  	<button type="button" disabled="" class="btn btn-primary">Website</button>
-  									  	<button type="button" disabled="" class="btn btn-default">www.farrframeworks.com</button>
+  									<div class="btn-group info-btn">
+  									  <button type="button" disabled="" class="btn btn-primary title-btn">Website</button>
+  									  <button type="button" disabled="" class="btn btn-default text-btn">www.farrframeworks.com</button>
   									</div>
   					          	</div>
   					        </li>
@@ -140,7 +138,7 @@
   					          	<div class="timeline-panel">
   					            	<div class="timeline-body">
   					            		<ul class="thumbs">
-  								            <li style="width: 33.3333%;"><a href="#thumb1" class="thumbnail" style="background-image: url('img/content/STEP_Labeling_Machine.jpg')">
+  								            <li style="width: 33.3333%;"><a href="#thumb1" class="thumbnail" style="background-image: url('assets/img/content/STEP_Labeling_Machine.jpg')">
   								                <h4>STEP Label Applicator</h4><span class="description">Details</span></a>
   								            </li>
   								            <li style="width: 33.3333%;">
@@ -162,7 +160,7 @@
 
   								        <div class="portfolio-content">
   								        	<div id="thumb1">
-  								                <div class="media"><img src="img/content/STEP_Labeling_Machine.jpg"></div>
+  								                <div class="media"><img src="assets/img/content/STEP_Labeling_Machine.jpg"></div>
   								                <h1>STEP Label Applicator</h1>
   								                <p>Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt.</p>
   								                <a href="#" class="btn btn-primary">Learn More</a>
@@ -477,13 +475,13 @@
     <!-- end:footer -->
 
     <!-- start:javascript -->
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.scrollUp.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-    <script src="js/portfolio.jquery.js"></script>
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.scrollUp.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+    <script src="assets/js/portfolio.jquery.js"></script>
     <!-- end:javascript -->
     <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none"></a>
   </body>
