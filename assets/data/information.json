@@ -12,5 +12,50 @@
   "email": "todd.farr@gmail.com",
   "address": "PO Box 4017 Beaverton, OR 97075",
   "phone": "503-821-7770",
-  "website": "www.farrframeworks.com"
+  "website": "www.farrframeworks.com",
+  "instagram": "http://www.instagram.com/todddangerfarr",
+  "linkedin": "https://www.linkedin.com/in/todd-farr-63163679",
+  "projects": [
+    {
+      "name": "STEP Label Applicator",
+      "type": "Machine Design",
+      "breifDescription": "Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt...",
+      "image": "assets/img/content/STEP_Labeling_Machine.jpg"
+    },
+    {
+      "name": "STEP Label Applicator",
+      "type": "Machine Design",
+      "breifDescription": "Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt...",
+      "image": "assets/img/content/STEP_Labeling_Machine.jpg"
+    },
+    {
+      "name": "STEP Label Applicator",
+      "type": "Machine Design",
+      "breifDescription": "Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt...",
+      "image": "assets/img/content/STEP_Labeling_Machine.jpg"
+    }
+  ],
+  "workExperience": [
+    {
+      "employer": "Nike, Inc.",
+      "title": "Machine Design Engineer II",
+      "location": "Busan, South Korea - Expatriate",
+      "breifDescription": "Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt...",
+      "dates": "April 2015 - Present"
+    },
+    {
+      "employer": "Nike, Inc.",
+      "title": "Machine Design Engineer I",
+      "location": "Taichung, Taiwan - Expatriate",
+      "breifDescription": "Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt...",
+      "dates": "Feb 2014 - April 2015"
+    },
+    {
+      "employer": "FARR Frameworks LLC",
+      "title": "Owner, Framebuilder & Tooling Engineer",
+      "location": "Portland, OR, USA",
+      "breifDescription": "Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt...",
+      "dates": "Feb 2013 - Feb 2014"
+    }
+  ]
 }

@@ -1,0 +1,20 @@
+<!-- TEMPLATE for work-experience -->
+<li id="id-resume">
+  <div class="timeline-badge default"><i class="fa fa-briefcase" data-original-title="" title=""></i></div>
+  <h1 class="timeline-head">WORK EXPERIENCE</h1>
+</li>
+<li id="resume">
+  <div class="timeline-badge warning"></div>
+  <div class="timeline-panel">
+    <h1>Work Experience</h1>
+    <div class="hr-left"></div>
+    <div class="work-experience" ng-repeat="job in cv.info.workExperience">
+      <h3>{{ job.title }}</h3>
+      <small class="subtext"><i class="fa fa-building-o" data-original-title="" title=""></i> {{ job.employer }} </small>
+      <small class="subtext"><i class="fa fa-map-marker" data-original-title="" title=""></i> {{ job.location }} </small>
+      <small class="subtext"><i class="fa fa-calendar" data-original-title="" title=""></i> {{ job.dates }}</small>
+      <p>{{ job.breifDescription }}</p>
+      <hr>
+    </div>
+  </div>
+</li>

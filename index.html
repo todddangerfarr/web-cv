@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <script type="text/javascript" src="assets/js/angular.min.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/webcv.js"></script>
   </head>
 
   <body id="page-top" ng-controller="InformationController as cv">
@@ -18,10 +19,10 @@
   							<a href="#">
                   <i class="fa fa-facebook fa-2x" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"></i>
                 </a>
-  							<a href="#">
+  							<a href="{{ cv.info.instagram }}" target="_blank">
                   <i class="fa fa-instagram fa-2x" data-toggle="tooltip" data-placement="top" title="" data-original-title="Instagram"></i>
                 </a>
-  							<a href="#">
+  							<a href="{{ cv.info.linkedin }}" target="_blank">
                   <i class="fa fa-linkedin fa-2x" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linked In"></i>
                 </a>
   						</div>
@@ -130,112 +131,34 @@
 
   					        <!-- start:work -->
   					        <li id="id-work">
-  								<div class="timeline-badge default"><i class="fa fa-sitemap" data-original-title="" title=""></i></div>
-  								<h1 class="timeline-head">PROJECTS</h1>
-  							</li>
-  							<li>
-  					          	<div class="timeline-badge danger"></div>
-  					          	<div class="timeline-panel">
-  					            	<div class="timeline-body">
-  					            		<ul class="thumbs">
-  								            <li style="width: 33.3333%;"><a href="#thumb1" class="thumbnail" style="background-image: url('assets/img/content/STEP_Labeling_Machine.jpg')">
-  								                <h4>STEP Label Applicator</h4><span class="description">Details</span></a>
-  								            </li>
-  								            <li style="width: 33.3333%;">
-  								                <a href="#thumb2" class="thumbnail" style="background-image: url('img/content/thumbnail1.jpg')"><h4>Design Kitchen</h4><span class="description">Beautiful design</span></a>
-  								            </li>
-  								            <li style="width: 33.3333%;">
-  								                <a href="#thumb3" class="thumbnail" style="background-image: url('img/content/thumbnail3.jpg')"><h4>Arsitecture</h4><span class="description">Clean Design</span></a>
-  								            </li>
-  								            <li style="width: 33.3333%;">
-  								                <a href="#thumb4" class="thumbnail" style="background-image: url('img/content/thumbnail4.jpg')"><h4>Design Room</h4><span class="description">Beautiful design</span></a>
-  								            </li>
-  								            <li style="width: 33.3333%;">
-  								                <a href="#thumb5" class="thumbnail" style="background-image: url('img/content/thumbnail5.jpg')"><h4>Design Kitchen</h4><span class="description">Clean Design</span></a>
-  								            </li>
-  								            <li style="width: 33.3333%;">
-  								                <a href="#thumb6" class="thumbnail" style="background-image: url('img/content/thumbnail6.jpg')"><h4>Arsitecture</h4><span class="description">Get More design</span></a>
-  								            </li>
+  								    <div class="timeline-badge default"><i class="fa fa-sitemap" data-original-title="" title=""></i></div>
+  								    <h1 class="timeline-head">PROJECTS</h1>
+  							    </li>
+  							    <li>
+  					          <div class="timeline-badge danger"></div>
+  					          <div class="timeline-panel">
+  					            <div class="timeline-body">
+  					            	<ul class="thumbs">
+								            <li ng-repeat="project in cv.info.projects" style="width: 33.3333%;"><a href="#thumb{{ $index + 1}}" class="thumbnail" style="background-image: url({{ project.image }})">
+								                <h4>{{ project.name }}</h4><span class="description">{{ project.type }}</span></a>
+								            </li>
   								        </ul>
 
   								        <div class="portfolio-content">
-  								        	<div id="thumb1">
-  								                <div class="media"><img src="assets/img/content/STEP_Labeling_Machine.jpg"></div>
-  								                <h1>STEP Label Applicator</h1>
-  								                <p>Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt.</p>
-  								                <a href="#" class="btn btn-primary">Learn More</a>
+  								        	<div ng-repeat="project in cv.info.projects" id="thumb{{ $index + 1 }}">
+								                <div class="media"><img src="{{ project.image }}"></div>
+								                <h1>{{ project.name }}</h1>
+								                <p>{{ project.breifDescription }}</p>
+								                <a href="#" class="btn btn-primary">Learn More</a>
   								            </div>
-  								            <div id="thumb2">
-  								                <div class="media"><img src="img/content/thumbnail2.jpg"></div>
-  								                <h1>Design Kitchen</h1>
-  								                <p>Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt.</p>
-  								                <a href="#" class="btn btn-primary">Learn More</a>
-  								            </div>
-  								            <div id="thumb3">
-  								                <div class="media"><img src="img/content/thumbnail3.jpg"></div>
-  								                <h1>Arsitecture</h1>
-  								                <p>Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt.</p>
-  								                <a href="#" class="btn btn-primary">Learn More</a>
-  								            </div>
-  								            <div id="thumb4">
-  								                <div class="media"><img src="img/content/thumbnail4.jpg"></div>
-  								                <h1>Design Room</h1>
-  								                <p>Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt.</p>
-  								                <a href="#" class="btn btn-primary">Learn More</a>
-  								            </div>
-  								            <div id="thumb5">
-  								                <div class="media"><img src="img/content/thumbnail5.jpg"></div>
-  								                <h1>Design Kitchen</h1>
-  								                <p>Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt.</p>
-  								                <a href="#" class="btn btn-primary">Learn More</a>
-  								            </div>
-  								            <div id="thumb6">
-  								                <div class="media"><img src="img/content/thumbnail6.jpg"></div>
-  								                <h1>Arsitecture</h1>
-  								                <p>Ut condimentum eros bibendum metus lacinia, ac condimentum justo faucibus. Nam nec dui convallis, sodales sapien in, gravida justo. Pellentesque pulvinar massa a nisl iaculis, quis iaculis elit tincidunt.</p>
-  								                <a href="#" class="btn btn-primary">Learn More</a>
-  								            </div>
-  								        </div>
+  								          </div>
   					            	</div>
   					          	</div>
   					        </li>
   					        <!-- end:work -->
 
   					        <!-- start:resume -->
-  					        <li id="id-resume">
-  					        	<div class="timeline-badge default"><i class="fa fa-briefcase" data-original-title="" title=""></i></div>
-  					        	<h1 class="timeline-head">WORK EXPERIENCE</h1>
-  					        </li>
-  					        <li id="resume">
-  					          	<div class="timeline-badge warning"></div>
-  					          	<div class="timeline-panel">
-  						          	<h1>Work Experience</h1>
-  						          	<div class="hr-left"></div>
-  						          	<div class="work-experience">
-  						          		<h3>Web designer</h3>
-  						          		<small><i class="fa fa-calendar" data-original-title="" title=""></i> 2010 - 2014</small>
-  						          		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-  						          		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  						          		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  						          	</div>
-  						          	<hr>
-  						          	<div class="work-experience">
-  						          		<h3>Graphic Designer</h3>
-  						          		<small><i class="fa fa-calendar" data-original-title="" title=""></i> 2010 - 2012</small>
-  						          		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-  						          		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  						          		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  						          	</div>
-  						          	<hr>
-  						          	<div class="work-experience">
-  						          		<h3>Web Security</h3>
-  						          		<small><i class="fa fa-calendar" data-original-title="" title=""></i> 2008 - 2010</small>
-  						          		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-  						          		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  						          		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  						          	</div>
-  					          	</div>
-  					        </li>
+  					        <experience></experience>
   					        <li id="resume">
   					          	<div class="timeline-badge warning"></div>
   					          	<div class="timeline-panel">

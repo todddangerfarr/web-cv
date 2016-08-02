@@ -1,6 +1,6 @@
 // angular module
 (function(){ // wrapping the function in a closure **good habit
-  var app = angular.module('webCv', []);
+  var app = angular.module('webCv', ['cv-directives']);
 
   // Web CV controller to populate info variable
   app.controller('InformationController', ['$http', function($http) {
